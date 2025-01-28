@@ -1,13 +1,12 @@
-from odoo import models, fields, api
 from datetime import datetime
 from odoo.tools import DEFAULT_SERVER_DATETIME_FORMAT
-
+from odoo import models, fields, api
 
 class SelectProducts(models.TransientModel):
     _name = 'select.products'
     _description = 'Select Products'
 
-    product_lines = fields.One2many('select.products.line', 'wizard_id', string='Product Lines')
+    product_lines = fields.One2many('select.products.line', 'wizard_id', string='Products')
     flag_order = fields.Char('Flag Order')
 
     def select_products(self):
